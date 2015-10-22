@@ -1,0 +1,20 @@
+package beanpackage;
+
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+
+/**
+ * Session Bean implementation class ColisConnector
+ */
+@Stateless
+@LocalBean
+public class ColisConnector {
+
+    /**
+     * Default constructor. 
+     */
+    public ColisConnector() {
+        // TODO Auto-generated constructor stub
+    }
+
+}
