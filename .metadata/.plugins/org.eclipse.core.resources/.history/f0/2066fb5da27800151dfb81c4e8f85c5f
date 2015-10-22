@@ -1,0 +1,7 @@
+package com.interfaces;
+
+import javax.ejb.Remote;
+
+public interface EJBInterface {
+	public String HelloWord(String to);
+}

@@ -1,0 +1,17 @@
+import java.util.*;
+import javax.naming.*;
+
+import com.beans.EJBBean;
+import com.interfaces.EJBInterface; 
+
+public class EJBClient {
+
+  public static void main(String[] args) {
+    try {
+    	
+    }catch(NamingException e){
+    	e.printStackTrace();
+    }
+    
+  }
+}

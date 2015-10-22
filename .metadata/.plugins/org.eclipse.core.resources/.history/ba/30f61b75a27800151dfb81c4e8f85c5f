@@ -1,0 +1,6 @@
+package com.interfaces;
+
+
+public interface EJBInterface {
+	public String HelloWord(String to);
+}

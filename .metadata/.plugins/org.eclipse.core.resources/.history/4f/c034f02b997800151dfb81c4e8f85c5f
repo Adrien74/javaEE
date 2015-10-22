@@ -1,0 +1,6 @@
+package com.interfaces;
+
+@Remote
+public interface EJBInterface {
+
+}

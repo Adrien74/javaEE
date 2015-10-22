@@ -1,0 +1,31 @@
+package com.beans;
+
+import com.interfaces.EJBInterface;
+import javax.ejb.Local;
+import javax.ejb.LocalBean;
+import javax.ejb.Stateless;
+import javax.persistence.Entity;
+
+/**
+ * Session Bean implementation class EJBBean
+ */
+@Stateless
+@Remote
+public class EJBBean implements EJBInterface {
+
+    /**
+     * Default constructor. 
+     */
+    public EJBBean() {
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+     * @see EJBInterface#HelloWord(String)
+     */
+    public String HelloWord(String to) {
+        // TODO Auto-generated method stub
+			return "Hello World " + to + " !";
+    }
+
+}
