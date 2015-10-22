@@ -7,30 +7,30 @@ import java.util.List;
 
 
 /**
- * The persistent class for the colis database table.
+ * The persistent class for the COLIS database table.
  * 
  */
 @Entity
-@Table(name="colis")
+@Table(name="COLIS")
 @NamedQuery(name="Coli.findAll", query="SELECT c FROM Colis c")
 public class Colis implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(unique=true, nullable=false)
+	@Column(name="IDCOLIS", unique=true, nullable=false)
 	private int idcolis;
 
-	@Column(length=30)
+	@Column(name="DESTINATION", length=30)
 	private String destination;
 
-	@Column(length=30)
+	@Column(name="ORIGINE", length=30)
 	private String origine;
 
-	@Column(precision=10)
+	@Column(name="POIDS", precision=10)
 	private BigDecimal poids;
 
-	@Column(length=150)
+	@Column(name="VALEUR", length=150)
 	private String valeur;
 
 	//bi-directional many-to-one association to Position
