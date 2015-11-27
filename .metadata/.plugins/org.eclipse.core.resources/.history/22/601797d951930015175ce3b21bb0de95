@@ -1,0 +1,19 @@
+package model;
+
+import java.math.BigDecimal;
+import javax.annotation.Generated;
+import javax.persistence.metamodel.ListAttribute;
+import javax.persistence.metamodel.SingularAttribute;
+import javax.persistence.metamodel.StaticMetamodel;
+
+@Generated(value="Dali", date="2015-11-25T09:52:20.200+0100")
+@StaticMetamodel(Coli.class)
+public class Coli_ {
+	public static volatile SingularAttribute<Coli, Integer> idcolis;
+	public static volatile SingularAttribute<Coli, String> destination;
+	public static volatile SingularAttribute<Coli, String> origine;
+	public static volatile SingularAttribute<Coli, BigDecimal> poids;
+	public static volatile SingularAttribute<Coli, String> valeur;
+	public static volatile SingularAttribute<Coli, Client> client;
+	public static volatile ListAttribute<Coli, Position> positions;
+}

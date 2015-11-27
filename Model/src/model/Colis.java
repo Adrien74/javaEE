@@ -7,34 +7,39 @@ import java.util.List;
 
 
 /**
- * The persistent class for the COLIS database table.
+ * The persistent class for the colis database table.
  * 
  */
 @Entity
-@Table(name="COLIS")
-@NamedQuery(name="Coli.findAll", query="SELECT c FROM Colis c")
+@Table(name="colis")
+@NamedQuery(name="Colis.findAll", query="SELECT c FROM Colis c")
 public class Colis implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name="IDCOLIS", unique=true, nullable=false)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(unique=true)
 	private int idcolis;
 
-	@Column(name="DESTINATION", length=30)
+	@Column(length=30)
 	private String destination;
 
-	@Column(name="ORIGINE", length=30)
+	@Column(length=30)
 	private String origine;
 
-	@Column(name="POIDS", precision=10)
+	@Column(precision=10)
 	private BigDecimal poids;
 
-	@Column(name="VALEUR", length=150)
+	@Column(length=150)
 	private String valeur;
 
+	//bi-directional many-to-one association to Client
+	@ManyToOne
+	@JoinColumn(name="idClient", nullable=false)
+	private Client client;
+
 	//bi-directional many-to-one association to Position
-	@OneToMany(mappedBy="coli")
+	@OneToMany(mappedBy="colis")
 	private List<Position> positions;
 
 	public Colis() {
@@ -43,6 +48,17 @@ public class Colis implements Serializable {
 	public int getIdcolis() {
 		return this.idcolis;
 	}
+
+	public Colis(String destination, String origine, BigDecimal poids, String valeur, Client client) {
+		super();
+		this.destination = destination;
+		this.origine = origine;
+		this.poids = poids;
+		this.valeur = valeur;
+		this.client = client;
+	}
+
+
 
 	public void setIdcolis(int idcolis) {
 		this.idcolis = idcolis;
@@ -78,6 +94,14 @@ public class Colis implements Serializable {
 
 	public void setValeur(String valeur) {
 		this.valeur = valeur;
+	}
+
+	public Client getClient() {
+		return this.client;
+	}
+
+	public void setClient(Client client) {
+		this.client = client;
 	}
 
 	public List<Position> getPositions() {

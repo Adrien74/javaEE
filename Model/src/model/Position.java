@@ -15,8 +15,8 @@ public class Position implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(unique=true, nullable=false)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(unique=true)
 	private int idposition;
 
 	@Column(length=70)
@@ -30,10 +30,10 @@ public class Position implements Serializable {
 	@Column(length=70)
 	private String longitude;
 
-	//bi-directional many-to-one association to Coli
+	//bi-directional many-to-one association to Colis
 	@ManyToOne
 	@JoinColumn(name="IDCOLIS", nullable=false)
-	private Colis coli;
+	private Colis colis;
 
 	public Position() {
 	}
@@ -79,11 +79,11 @@ public class Position implements Serializable {
 	}
 
 	public Colis getColi() {
-		return this.coli;
+		return this.colis;
 	}
 
 	public void setColi(Colis coli) {
-		this.coli = coli;
+		this.colis = coli;
 	}
 
 }

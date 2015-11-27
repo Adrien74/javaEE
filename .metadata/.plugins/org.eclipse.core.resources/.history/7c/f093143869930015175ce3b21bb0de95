@@ -1,0 +1,18 @@
+package com.interfaces;
+
+import java.math.BigDecimal;
+import java.util.List;
+
+import javax.ejb.Remote;
+
+import model.Client;
+import model.Colis;
+
+@Remote(EJBInterface.class)
+public interface EJBInterface {
+	void createColis(BigDecimal poids, String valeur, String origine, String destination);
+	boolean login(String login, String password);
+	List<Colis> getAllColis();
+	boolean isAdmin(String login);
+	List<Colis> getClientColis(String login);
+}

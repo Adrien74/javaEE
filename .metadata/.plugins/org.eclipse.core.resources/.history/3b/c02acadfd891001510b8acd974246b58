@@ -1,0 +1,28 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+	pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<%@ page
+	import="java.util.List, java.util.Date, model.Colis, model.Position"%>
+
+<title>Creation colis</title>
+</head>
+
+<body>
+	<form method="post" action="creationColis">
+		<label for="poids">Poids </label> <input type="text" id="poids"
+			name="poids" value="" size="20" maxlength="60" /> <label
+			for="valeur">Valeur </label> <input type="text" id="valeur"
+			name="valeur" value="" size="20" maxlength="60" /> <label
+			for="origine">Origine </label> <input type="text" id="origine"
+			name="origine" value="" size="20" maxlength="60" /> <label
+			for="destination">Destination </label> <input type="text"
+			id="destination" name="destination" value="" size="20" maxlength="60" />
+
+		<input type="submit" value="Créer colis" />
+	</form>
+
+</body>
+</html>

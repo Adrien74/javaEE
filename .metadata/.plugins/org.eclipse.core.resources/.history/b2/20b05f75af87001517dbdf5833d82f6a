@@ -1,0 +1,38 @@
+package com.beans;
+
+import java.util.List;
+
+import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
+import com.interfaces.EJBInterface;
+
+import model.Colis;
+
+/**
+ * Session Bean implementation class EJBBean
+ */
+@Stateless(mappedName="EJB")
+public class EJBBean implements EJBInterface {
+	
+	@PersistenceContext
+	EntityManager em;
+
+	/**
+     * @see EJBInterface#HelloWord(String)
+     */
+	@Override
+    public String HelloWord(String to) {
+        // TODO Auto-generated method stub
+			return "Hello World " + to + " !";
+    }
+
+	@Override
+	public List<Colis> getAllColis() {
+		// TODO Auto-generated method stub
+		
+		return em.createQuery("Select c from Colis c ORDER BY c.idcolis").getResultList();
+	}
+
+}

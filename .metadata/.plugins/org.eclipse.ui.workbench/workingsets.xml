@@ -1,4 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <workingSetManager>
+<workingSet editPageId="org.eclipse.ui.resourceWorkingSetPage" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1447170739298_1" label="ear" name="ear">
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Model" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/Vue" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/TP1_EAR" type="4"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/NotreEJB" type="4"/>
+</workingSet>
 <workingSet aggregate="true" factoryID="org.eclipse.ui.internal.WorkingSetFactory" id="1445498482110_0" label="Window Working Set" name="Aggregate for window 1445498482110"/>
+<mruList name="ear"/>
 </workingSetManager>

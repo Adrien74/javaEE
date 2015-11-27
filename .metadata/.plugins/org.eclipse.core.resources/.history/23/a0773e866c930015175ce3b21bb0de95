@@ -1,0 +1,47 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"
+	integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ=="
+	crossorigin="anonymous">
+<%@ page
+	import="java.util.List, java.util.Date, model.Colis, model.Position"%>
+
+<title>Positions du colis</title>
+</head>
+
+
+<body>
+
+	<table class="table table-condensed table-striped">
+		<tr>
+			<th>ID Colis</th>
+			<th>Poids</th>
+			<th>Valeur</th>
+			<th>Origine</th>
+			<th>Destination</th>
+			<th>Positions</th>
+		</tr>
+		<tr>
+			<td>${Colis.idcolis}</td>
+			<td>${Colis.poids}</td>
+			<td>${Colis.valeur}</td>
+			<td>${Colis.origine}</td>
+			<td>${Colis.destination}</td>
+		</tr>
+		<h1>Liste des positions</h1>
+		
+		<c:forEach items="${Colis}" var="item">
+		</c:forEach>
+	</table>
+
+	<a href="/javaee-vue/CreationColis" class="btn btn-primary"
+		role="button">Créer un colis</a>
+
+</body>
+</html>

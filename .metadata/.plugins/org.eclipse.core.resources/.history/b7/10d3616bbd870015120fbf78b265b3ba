@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>TP1_JavaEE</groupId>
+	<artifactId>TP1_JavaEE</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>ear</packaging>
+	<name>TP1_JavaEE</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>Model</groupId>
+			<artifactId>Model</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>javaee.NotreEJB</groupId>
+			<artifactId>NotreEJB</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>javaee.vue</groupId>
+			<artifactId>vue</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+			<type>war</type>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-ear-plugin</artifactId>
+				<version>2.10</version>
+				<configuration>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+						</manifest>
+					</archive>
+					<modules>
+						<webModule>
+							<groupId>javaee.vue</groupId>
+							<artifactId>Vue</artifactId>
+							
+						</webModule>
+						<ejbModule>
+							<groupId>javaee.notreEJB</groupId>
+							<artifactId>NotreEJB</artifactId>
+						</ejbModule>
+						<jarModule>
+							<groupId>Model</groupId>
+							<artifactId>Model</artifactId>
+							<includeInApplicationXml>true</includeInApplicationXml>
+						</jarModule>
+					</modules>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>

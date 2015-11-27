@@ -1,3 +1,2 @@
 #GlassFish 3
-#Thu Oct 22 12:16:38 CEST 2015
-org.eclipse.jst.jee.server\:Vue=C\:\\Users\\Adrien\\Desktop\\glassfish4\\glassfish\\domains\\domain1\\eclipseApps\\Vue
+#Wed Nov 25 15:02:34 CET 2015

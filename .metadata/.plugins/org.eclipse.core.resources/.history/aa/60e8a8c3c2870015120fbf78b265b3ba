@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<application xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/application_7.xsd" version="7">
+  <display-name>javaee-ear</display-name>
+  <module>
+    <web>
+      <web-uri>javaee-vue-0.0.1-SNAPSHOT.war</web-uri>
+      <context-root>/javaee-vue</context-root>
+    </web>
+  </module>
+  <module>
+    <ejb>javaee-NotreEJB-0.0.1-SNAPSHOT.jar</ejb>
+  </module>
+  <module>
+    <java>javaee-Model-0.0.1-SNAPSHOT.jar</java>
+  </module>
+</application>

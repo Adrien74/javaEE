@@ -1,0 +1,28 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+<%@ page import="java.util.List, java.util.Date, model.Colis, model.Position"%>
+
+<title>Liste des colis</title>
+</head>
+
+
+<body>
+	
+	<h2>Liste des colis</h2>
+	<table class="table table-condensed table-striped">
+	<tr><th>ID Colis</th><th>Poids</th><th>Valeur</th><th>Origine</th><th>Destination</th></tr>
+		<c:forEach items="${Colis}" var="item">
+			<tr><td>${item.idcolis}</td> <td>${item.poids}</td> <td>${item.valeur}</td> <td>${item.origine}
+				</td><td>${item.destination}</td></tr>
+		</c:forEach>
+	</table>
+	
+	<button type="button" class="btn btn-primary" href="/CreationColis">Créer un colis</button>
+</body>
+</html>

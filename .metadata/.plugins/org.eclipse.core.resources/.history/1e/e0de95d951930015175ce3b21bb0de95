@@ -1,0 +1,16 @@
+package model;
+
+import javax.annotation.Generated;
+import javax.persistence.metamodel.ListAttribute;
+import javax.persistence.metamodel.SingularAttribute;
+import javax.persistence.metamodel.StaticMetamodel;
+
+@Generated(value="Dali", date="2015-11-25T09:52:20.160+0100")
+@StaticMetamodel(Client.class)
+public class Client_ {
+	public static volatile SingularAttribute<Client, Integer> idClient;
+	public static volatile SingularAttribute<Client, Byte> isAdmin;
+	public static volatile SingularAttribute<Client, String> login;
+	public static volatile SingularAttribute<Client, String> password;
+	public static volatile ListAttribute<Client, Coli> colis;
+}

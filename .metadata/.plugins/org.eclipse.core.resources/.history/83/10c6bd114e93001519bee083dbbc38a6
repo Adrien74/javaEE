@@ -1,0 +1,89 @@
+package model;
+
+import java.io.Serializable;
+import javax.persistence.*;
+
+
+/**
+ * The persistent class for the position database table.
+ * 
+ */
+@Entity
+@Table(name="position")
+@NamedQuery(name="Position.findAll", query="SELECT p FROM Position p")
+public class Position implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	@Id
+	@GeneratedValue(strategy=GenerationType.AUTO)
+	@Column(unique=true, nullable=false)
+	private int idposition;
+
+	@Column(length=70)
+	private String emplacement;
+
+	private int etat;
+
+	@Column(length=70)
+	private String lattitude;
+
+	@Column(length=70)
+	private String longitude;
+
+	//bi-directional many-to-one association to Coli
+	@ManyToOne
+	@JoinColumn(name="IDCOLIS", nullable=false)
+	private Colis coli;
+
+	public Position() {
+	}
+
+	public int getIdposition() {
+		return this.idposition;
+	}
+
+	public void setIdposition(int idposition) {
+		this.idposition = idposition;
+	}
+
+	public String getEmplacement() {
+		return this.emplacement;
+	}
+
+	public void setEmplacement(String emplacement) {
+		this.emplacement = emplacement;
+	}
+
+	public int getEtat() {
+		return this.etat;
+	}
+
+	public void setEtat(int etat) {
+		this.etat = etat;
+	}
+
+	public String getLattitude() {
+		return this.lattitude;
+	}
+
+	public void setLattitude(String lattitude) {
+		this.lattitude = lattitude;
+	}
+
+	public String getLongitude() {
+		return this.longitude;
+	}
+
+	public void setLongitude(String longitude) {
+		this.longitude = longitude;
+	}
+
+	public Colis getColi() {
+		return this.coli;
+	}
+
+	public void setColi(Colis coli) {
+		this.coli = coli;
+	}
+
+}
